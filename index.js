@@ -8,4 +8,12 @@
 
 // console.log(newarr);
 
+// how to check if their is an  object or not ?
 
+// function isarray(isarray){
+//     console.log(Array.isArray(isarray))
+// };
+    
+
+// isarray([]);
+// isarray({})
