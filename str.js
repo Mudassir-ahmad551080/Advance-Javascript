@@ -19,3 +19,42 @@
 // }
 
 // console.log(alphabetOrder('cba'))
+
+// function  reverseNumner(num) {
+//     let rev = 0;
+//     while (num>0) {
+//         rem = num%10;
+//         rev = rev*10+rem
+//         num = Math.floor(num/10)
+//     }
+//     return rev
+// }
+
+// console.log(reverseNumner(123));
+
+// let string = "hello what is your name"
+
+// let anotherstr = string.split(" ").map((str)=>{
+      
+//    let newStr = str.charAt(0).toUpperCase()+str.substring(1);
+//    return newStr
+    
+// });
+
+// console.log(anotherstr.join(" "));
+
+
+// function StrChecker(str){
+//     let obj = {}
+//   str.split("").forEach((ele)=>{
+//      if(obj.hasOwnProperty(ele)){
+//         obj[ele]++;
+//      }
+//      else{
+//         obj[ele] = 1
+//      }
+//   });
+//   console.log(obj)
+// }
+
+// StrChecker('apple')
