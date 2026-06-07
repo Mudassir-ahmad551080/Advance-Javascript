@@ -58,3 +58,68 @@
 // }
 
 // StrChecker('apple')
+
+
+// Yeh teeno functions PEHLE likho file mein
+function getUser(userId) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (userId === 1) {
+        resolve({ id: 1, name: "Ali Khan", email: "ali@gmail.com" });
+      } else {
+        reject("User not found!");
+      }
+    }, 1000);
+  });
+}
+
+function getOrders(userId) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (userId === 1) {
+        resolve([
+          { orderId: 101, item: "Laptop", price: 85000 },
+          { orderId: 102, item: "Mouse", price: 1500 },
+        ]);
+      } else {
+        reject("No orders found!");
+      }
+    }, 1000);
+  });
+}
+
+function getOrderDetail(orderId) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (orderId === 101) {
+        resolve({
+          orderId: 101,
+          item: "Laptop",
+          price: 85000,
+          status: "Delivered ✅",
+          address: "Karachi, Pakistan"
+        });
+      } else {
+        reject("Order detail not found!");
+      }
+    }, 1000);
+  });
+}
+
+// Phir apna function likho
+async function loadUserDashboard(userId) {
+  try {
+    const user = await getUser(userId);
+    const orders = await getOrders(user.id); // ← user.id pass karo
+    const orderDetail = await getOrderDetail(orders[0].orderId); // ← yeh fix karo
+    
+    console.log("User:", user);
+    console.log("Orders:", orders);
+    console.log("Latest Order:", orderDetail);
+    
+  } catch(err) {
+    console.error("Error:", err);
+  }
+}
+
+loadUserDashboard(1);
